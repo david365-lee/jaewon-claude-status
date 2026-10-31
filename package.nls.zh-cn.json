@@ -1,0 +1,17 @@
+{
+  "description": "在 VS Code 状态栏显示 Claude Code 的上下文窗口使用率和会话 token 数，数据来自本地 Claude Code 对话记录。",
+  "command.showDetails": "显示用量详情",
+  "command.refresh": "刷新用量",
+  "command.showLog": "显示日志",
+  "config.enabled": "在状态栏中显示 Claude Code 用量。",
+  "config.sessionScope": "要跟踪的 Claude Code 会话。",
+  "config.sessionScope.workspace": "在已打开的工作区文件夹中启动的最新会话（没有时使用全部中最新的）",
+  "config.sessionScope.latest": "所有项目中最新的会话",
+  "config.statusFormat": "状态栏文本。占位符：`{percent}` `{context}` `{window}` `{model}` `{session}` `{output}` `{cost}`。可以使用 `$(pulse)` 等 Codicon。",
+  "config.contextWindow": "上下文窗口大小（token）或 `auto`。auto 在 1M 上下文模型或用量已超过 200,000 时视为 1,000,000，否则为 200,000。",
+  "config.warningThreshold": "状态项变为黄色的上下文使用率（%）",
+  "config.errorThreshold": "状态项变为红色的上下文使用率（%）",
+  "config.refreshIntervalSeconds": "检查对话记录的间隔（秒）",
+  "config.alignment": "状态栏中的位置",
+  "config.pricing": "可选。按模型 ID 前缀设置每百万 token 的美元单价，例如 `{ \"claude-opus\": { \"input\": 0, \"output\": 0, \"cacheRead\": 0, \"cacheWrite\": 0 } }`。为空时不显示费用。结果仅为估算值。"
+}

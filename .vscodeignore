@@ -1,0 +1,7 @@
+test/**
+scripts/**
+dist/**
+.gitignore
+**/*.map
+images/icon.svg
+PUBLISHING.md

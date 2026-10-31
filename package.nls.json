@@ -1,0 +1,17 @@
+{
+  "description": "Shows Claude Code context-window usage and session tokens in the VS Code status bar, read from local Claude Code transcripts.",
+  "command.showDetails": "Show usage details",
+  "command.refresh": "Refresh usage",
+  "command.showLog": "Show log",
+  "config.enabled": "Show Claude Code usage in the status bar.",
+  "config.sessionScope": "Which Claude Code session to follow.",
+  "config.sessionScope.workspace": "The newest session started in an open workspace folder (falls back to the newest overall).",
+  "config.sessionScope.latest": "The newest session of any project.",
+  "config.statusFormat": "Status bar text. Placeholders: `{percent}` `{context}` `{window}` `{model}` `{session}` `{output}` `{cost}`. Codicons such as `$(pulse)` are allowed.",
+  "config.contextWindow": "Context window size in tokens, or `auto` (1,000,000 for 1M-context models or when usage already exceeds 200,000; otherwise 200,000).",
+  "config.warningThreshold": "Context percentage that turns the item yellow.",
+  "config.errorThreshold": "Context percentage that turns the item red.",
+  "config.refreshIntervalSeconds": "How often to check the transcript, in seconds.",
+  "config.alignment": "Side of the status bar.",
+  "config.pricing": "Optional prices in USD per million tokens, keyed by model-id prefix, e.g. `{ \"claude-opus\": { \"input\": 0, \"output\": 0, \"cacheRead\": 0, \"cacheWrite\": 0 } }`. Empty = no cost is shown. Results are estimates only."
+}

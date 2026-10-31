@@ -1,0 +1,17 @@
+{
+  "description": "Claude Code のコンテキストウィンドウ使用率とセッションのトークン数を VS Code のステータスバーに表示します。ローカルの Claude Code の会話記録を読み取ります。",
+  "command.showDetails": "使用量の詳細を表示",
+  "command.refresh": "使用量を更新",
+  "command.showLog": "ログを表示",
+  "config.enabled": "ステータスバーに Claude Code の使用量を表示します。",
+  "config.sessionScope": "追跡する Claude Code セッション。",
+  "config.sessionScope.workspace": "開いているワークスペースフォルダーで開始した最新のセッション (なければ全体で最新)",
+  "config.sessionScope.latest": "すべてのプロジェクトで最新のセッション",
+  "config.statusFormat": "ステータスバーの表示。プレースホルダー: `{percent}` `{context}` `{window}` `{model}` `{session}` `{output}` `{cost}`。`$(pulse)` などの Codicon も使えます。",
+  "config.contextWindow": "コンテキストウィンドウのサイズ (トークン) または `auto`。auto は 1M コンテキストのモデル、または使用量がすでに 200,000 を超えている場合は 1,000,000、それ以外は 200,000 とみなします。",
+  "config.warningThreshold": "項目を黄色にするコンテキスト使用率 (%)",
+  "config.errorThreshold": "項目を赤にするコンテキスト使用率 (%)",
+  "config.refreshIntervalSeconds": "会話記録を確認する間隔 (秒)",
+  "config.alignment": "ステータスバーの表示位置",
+  "config.pricing": "任意。モデル ID の接頭辞ごとの 100 万トークンあたりの USD 単価。例: `{ \"claude-opus\": { \"input\": 0, \"output\": 0, \"cacheRead\": 0, \"cacheWrite\": 0 } }`。空の場合は費用を表示しません。結果は推定値です。"
+}

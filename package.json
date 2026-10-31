@@ -1,0 +1,55 @@
+{
+  "name": "jaewon-claude-status",
+  "displayName": "jaewon-claude-status",
+  "description": "%description%",
+  "version": "0.1.0",
+  "publisher": "jaewon",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": { "color": "#14243d", "theme": "dark" },
+  "repository": { "type": "git", "url": "https://github.com/david365-lee/jaewon-claude-status.git" },
+  "bugs": { "url": "https://github.com/david365-lee/jaewon-claude-status/issues" },
+  "homepage": "https://github.com/david365-lee/jaewon-claude-status#readme",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Visualization", "Other"],
+  "keywords": ["claude", "claude code", "usage", "tokens", "context window", "status bar"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "l10n": "./l10n",
+  "contributes": {
+    "commands": [
+      { "command": "jaewonClaudeStatus.showDetails", "title": "%command.showDetails%", "category": "Jaewon Claude Status" },
+      { "command": "jaewonClaudeStatus.refresh", "title": "%command.refresh%", "category": "Jaewon Claude Status" },
+      { "command": "jaewonClaudeStatus.showLog", "title": "%command.showLog%", "category": "Jaewon Claude Status" }
+    ],
+    "configuration": {
+      "title": "Jaewon Claude Status",
+      "properties": {
+        "jaewonClaudeStatus.enabled": { "type": "boolean", "default": true, "description": "%config.enabled%" },
+        "jaewonClaudeStatus.sessionScope": {
+          "type": "string", "enum": ["workspace", "latest"], "default": "workspace",
+          "enumDescriptions": ["%config.sessionScope.workspace%", "%config.sessionScope.latest%"],
+          "description": "%config.sessionScope%"
+        },
+        "jaewonClaudeStatus.statusFormat": { "type": "string", "default": "$(pulse) {percent}% · {context}/{window}", "markdownDescription": "%config.statusFormat%" },
+        "jaewonClaudeStatus.contextWindow": { "type": ["string", "number"], "default": "auto", "markdownDescription": "%config.contextWindow%" },
+        "jaewonClaudeStatus.warningThreshold": { "type": "number", "default": 70, "minimum": 1, "maximum": 100, "description": "%config.warningThreshold%" },
+        "jaewonClaudeStatus.errorThreshold": { "type": "number", "default": 90, "minimum": 1, "maximum": 100, "description": "%config.errorThreshold%" },
+        "jaewonClaudeStatus.refreshIntervalSeconds": { "type": "number", "default": 5, "minimum": 1, "description": "%config.refreshIntervalSeconds%" },
+        "jaewonClaudeStatus.alignment": { "type": "string", "enum": ["right", "left"], "default": "right", "description": "%config.alignment%" },
+        "jaewonClaudeStatus.pricing": {
+          "type": "object", "default": {},
+          "additionalProperties": {
+            "type": "object",
+            "properties": { "input": { "type": "number" }, "output": { "type": "number" }, "cacheRead": { "type": "number" }, "cacheWrite": { "type": "number" } }
+          },
+          "markdownDescription": "%config.pricing%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "package": "npx --yes @vscode/vsce@3 package --out dist/"
+  }
+}
