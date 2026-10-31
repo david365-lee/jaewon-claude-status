@@ -28,18 +28,18 @@ git push -u origin main
 ## 2. Marketplace publisher와 토큰
 
 1. https://marketplace.visualstudio.com/manage 에 Microsoft 계정으로 로그인합니다.
-2. **Create publisher**에서 ID를 `jaewon`으로 만듭니다. 이미 사용 중이면 다른 ID로 만들고 `package.json`의 `"publisher"` 값을 그 ID로 바꾼 뒤 `npm run package`를 다시 실행합니다.
+2. 기존 publisher `jaewon-lee`(이 PC에 설치된 다른 jaewon-lee 확장과 같은 ID)를 사용합니다. 다른 publisher로 올리려면 `package.json`의 `"publisher"` 값을 그 ID로 바꾸고 `npm run package`를 다시 실행합니다.
 3. https://dev.azure.com 에서 Personal Access Token을 발급합니다. Organization은 **All accessible organizations**, Scopes는 **Marketplace › Manage**로 지정합니다. 토큰은 저장소나 파일에 남기지 마세요.
 
 ## 3. 게시
 
 ```powershell
 cd D:\소스코드\jaewon-claude-status
-npx --yes @vscode/vsce@3 login jaewon      # 토큰 입력
+npx --yes @vscode/vsce@3 login jaewon-lee      # 토큰 입력
 npx --yes @vscode/vsce@3 publish           # 또는: 관리 페이지에서 dist\*.vsix 업로드
 ```
 
-게시 후 몇 분 안에 `https://marketplace.visualstudio.com/items?itemName=jaewon.jaewon-claude-status`에서 확인할 수 있습니다.
+게시 후 몇 분 안에 `https://marketplace.visualstudio.com/items?itemName=jaewon-lee.jaewon-claude-status`에서 확인할 수 있습니다.
 
 ## 참고: 이름
 
